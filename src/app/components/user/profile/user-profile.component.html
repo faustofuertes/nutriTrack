@@ -1,0 +1,14 @@
+<div *ngIf="user">
+    <h2>Perfil de {{ user.name }} {{ user.surname }}</h2>
+    <p>Email: {{ user.email }}</p>
+    <p>Edad: {{ user.age }}</p>
+    <p>Peso: {{ user.weight }} kg</p>
+    <p>Altura: {{ user.height }} cm</p>
+    <p>Género: {{ user.gender }}</p>
+
+    <h3>Datos Nutricionales</h3>
+    <p>TMB: {{ user.caloriesNeeded }} kcal</p>
+
+<div *ngIf="!user">
+<p>No se pudo cargar el perfil del usuario.</p>
+</div>

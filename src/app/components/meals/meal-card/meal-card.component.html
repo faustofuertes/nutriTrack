@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="container">
+    <div class="buttons">
+        <button class="add-button" (click)="emitAddMode()">
+            <i class="fas fa-plus"></i>
+        </button>
+        <label class="totalCalories">{{(totalCalories).toFixed(2)}} kcals.</label>
+        <button (click)="toggleExpand()" class="chevron-button" [ngClass]="{'rotate': isExpanded}">
+            <i class="fas" [ngClass]="isExpanded ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+        </button>
+    </div>
+
+    <div class="food-list" [ngClass]="{'expanded': isExpanded}">
+        <div *ngIf="isExpanded">
+            @for (f of arrayFood; track $index) {
+            <div class="food-item">
+                <app-food-container [foodRecived]="f" [flag]="true"></app-food-container>
+                <button class="btn-delete" (click)="emitMealType()" (click)="emitDelete(f)">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button class="btn-edit">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+            </div>
+            }
+        </div>
+    </div>
+</div>

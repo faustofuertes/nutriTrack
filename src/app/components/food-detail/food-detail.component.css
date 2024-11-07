@@ -1,0 +1,72 @@
+.container {
+    margin: auto;
+    width: 70%;
+    height: 400px;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.info {
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.icon{
+    height: 90px;
+    width: 90px;
+}
+
+.number {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.macros-container {
+    display: flex;
+
+}
+
+.macro {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+    margin-right: 90px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.foodName {
+    font-weight: 500;
+    font-size: 25px;
+}
+
+
+.color {
+    color: #6c757d;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.gramQuantity {
+    width: 50px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.gramQuantity:focus {
+    border: 2px solid #66BB6A;
+    outline: none;
+}

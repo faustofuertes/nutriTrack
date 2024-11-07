@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="info">
+        <div class="icon-container">
+            <img class="icon" [src]="foodIcons[foodRecived.foodType]" [alt]="foodRecived.foodType" />
+            <p class="foodName">{{foodRecived.name}}</p>
+            <span class="color">
+                <p>{{foodRecived.foodType}}</p>
+            </span>
+        </div>
+    </div>
+
+
+    <div class="number">
+        <div class="info-container">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sed incidunt accusantium fugiat ipsum qui
+                deserunt vel minus, illo modi ducimus necessitatibus odit officiis maiores provident, nisi repellendus
+                illum? Atque!</p>
+            <h2>Nutricional information for <input class="gramQuantity" type="number" name="gramQuantity"
+                    [(ngModel)]="gramQuantity" min="0"> gr</h2>
+        </div>
+
+        <div class="macros-container">
+            <div class="macro">
+                <p class="cals">{{(foodRecived.caloriesPerGram * gramQuantity).toFixed(2)}} kcal</p>
+                <span class="color">
+                    <p class="detail">🔥 calories</p>
+                </span>
+            </div>
+
+            <div class="macro">
+                <p class="cals">{{(foodRecived.proteins * gramQuantity).toFixed(2)}} gr</p>
+                <span class="color">
+                    <p class="detail">🍗 proteins</p>
+                </span>
+            </div>
+
+            <div class="macro">
+                <p class="cals">{{(foodRecived.carbohydrates * gramQuantity).toFixed(2)}} gr</p>
+                <span class="color">
+                    <p class="detail">🍞 carbs</p>
+                </span>
+            </div>
+
+            <div class="macro">
+                <p class="cals">{{(foodRecived.fats * gramQuantity).toFixed(2)}} gr</p>
+                <span class="color">
+                    <p class="detail">🥑 fats</p>
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>
