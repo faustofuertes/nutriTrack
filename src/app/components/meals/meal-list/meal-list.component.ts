@@ -17,7 +17,6 @@ export class MealListComponent implements OnInit, OnChanges {
   @Output() mealTypeEmmiter = new EventEmitter(); //emite el mealType a my-nutri-track
   @Output() mealIdEmmiter = new EventEmitter(); //emite el mealId a my-nutri-track
 
-
   meal?: Meals;
   arrayBreakfast?: Food[];
   arrayLunch?: Food[];
@@ -30,11 +29,6 @@ export class MealListComponent implements OnInit, OnChanges {
 
   //cuando se ejecuta se hace un GET de el MEAL de la fecha ACTUAL
   ngOnInit(): void {
-    this.arrayBreakfast = [];
-    this.arrayLunch = [];
-    this.arraySnack = [];
-    this.arrayDinner = [];
-
     this.dateRecived = localStorage.getItem('loginDate');
     console.log(this.dateRecived)
     this._myMealsService.getUserMealByDate(this.dateRecived).subscribe(data => {
@@ -48,8 +42,6 @@ export class MealListComponent implements OnInit, OnChanges {
 
   //cuando cambia la fecha se vuelve a traer toda la info pero de la fecha seleccionada
   ngOnChanges(changes: SimpleChanges): void {
-
-
     this._myMealsService.getUserMealByDate(this.dateRecived).subscribe(data => {
       this.meal = data[0];
       this.arrayBreakfast = this.meal.breakfast;

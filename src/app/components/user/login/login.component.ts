@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ReactiveFormsModule,FormBuilder,Validators,FormGroup } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
 import { NavBarComponent } from "../../../sharedComponents/nav-bar/nav-bar.component";
+import { MealsService } from '../../../services/meals.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,11 @@ export class LoginComponent {
   loginForm: FormGroup;
   loginFailed: boolean = false; //  propiedad para mostrar el error
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router,
+    private _myMealsService: MealsService) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -28,7 +33,9 @@ export class LoginComponent {
       const { email, password } = this.loginForm.value;
       this.authService.login(email, password).subscribe(success => {
         if (success) {
+          const userToken = localStorage.getItem('userToken')
           this.router.navigate(['/userProfile']); // Redirigir a la página protegida
+          this._myMealsService.loadMeals(userToken).subscribe()
         } else {
           this.loginFailed = true; // Mostrar mensaje de error
         }

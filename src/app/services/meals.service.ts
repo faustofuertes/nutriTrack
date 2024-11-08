@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, switchMap, throwError } from 'rxjs';
+import { catchError, map, Observable, of, switchMap, throwError } from 'rxjs';
 import { Meals } from '../interfaces/meals';
 import { Food } from '../interfaces/food';
 
@@ -19,24 +19,47 @@ export class MealsService {
   }
 
   //Metodo que se ejecuta SIEMPRE que se inicia sesion para crear una MEAL con la fecha de hoy si es que no existe, caso contrario no hace nada
-  loadMeals() {
-
-    let todayMeal: Meals[] | undefined;
-    this.getUserMealByDate(this.currentDate).subscribe(result => {
-      todayMeal = result;
-    })
-
-    if (todayMeal) {
-      return;
-    } else {
-      const newMeal: Meals = {
-        idUser: this.userToken,
-        date: this.currentDate
-      }
-
-      this.postMeal(newMeal).subscribe();
+  loadMeals(userToken: string | null): Observable<Meals | null> {
+    if (!userToken) {
+      console.error('No hay un usuario autenticado');
+      return of(null); // Retorna un observable vacío si no hay token de usuario
     }
+
+    return this.getUserMealByDate(this.currentDate).pipe(
+      switchMap(result => {
+        console.log(result)
+        if (result && result.length > 0) {
+          // Si ya existe una comida para hoy, retornar la comida existente
+          const existingMeal = result.find(meal => meal.date === this.currentDate);
+          if (existingMeal) {
+            return of(existingMeal); // Retorna la comida existente si ya tiene una comida con la misma fecha
+          }
+        }
+
+        // Si no existe una comida para hoy, creamos una nueva
+        const newMeal: Meals = {
+          idUser: userToken,
+          date: this.currentDate,
+          breakfast: [],
+          lunch: [],
+          snack: [],
+          dinner: [],
+        };
+
+        // Crear una nueva comida en el servidor (suponiendo que postMeal haga un POST)
+        return this.postMeal(newMeal).pipe(
+          map(() => newMeal) // Retorna la comida recién creada
+        );
+      }),
+      catchError((error) => {
+        console.error('Error al cargar las comidas', error);
+        return of(null); // Retorna null en caso de error para evitar romper el flujo
+      })
+    );
   }
+
+
+
 
   //Retorna todos los meals del usuario con la sesion iniciada usando userToken
   getUserMeals(): Observable<Meals[]> {

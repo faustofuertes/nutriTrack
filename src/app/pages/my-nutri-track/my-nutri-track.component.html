@@ -1,30 +1,41 @@
 <app-nav-bar></app-nav-bar>
 
 <div class="container">
-    <app-date-picker (datePickedEmitter)="dateReciver($event)"></app-date-picker>
-    <div class="meals"><app-meal-list 
+
+    <div class="meals">
+        <app-meal-list 
         [dateRecived]="dateRecivedFromDP" 
         (mealIdEmmiter)="mealIdReciver($event)"
         (mealTypeEmmiter)="mealTypeReciver($event)" 
-        (addModeEmitter)="changeAddMode()" ></app-meal-list></div>
-    <div class="graph">Grafico torta componente fechas</div>
+        (addModeEmitter)="changeAddMode()" >
+        </app-meal-list>
+    </div>
+    
+    <div class="graph">
+        <app-date-picker (datePickedEmitter)="dateReciver($event)"></app-date-picker>
+    </div>
+
 </div>
 
 @if (addMode) {
 <div class="add-food-mode" (click)="changeAddMode()">
     <div class="container-add-food" (click)="changeAddMode()">
 
-        <app-barra-buscadora-comidas (foodNameEmitter)="foodNameReciver($event)"></app-barra-buscadora-comidas>
+        <app-barra-buscadora-comidas 
+        (foodNameEmitter)="foodNameReciver($event)">
+        </app-barra-buscadora-comidas>
 
         <div class="add-controls">
-            <input class="input-quantity" type="number" [(ngModel)]="foodQuantity" [min]="0" />
+            <input class="input-quantity" type="number" [(ngModel)]="foodQuantity" [min]="0"/>
             <button class="btn-add" (click)="addFoodToMeal()">ADD</button>
         </div>
 
         <div class="food-list">
             @for (f of arrayFoods; track $index) {
-            <app-food-container [foodRecived]="f" (foodClickEmitter)="foodReciver($event)"
-                [flag]="false"></app-food-container>
+            <app-food-container 
+            [foodRecived]="f" 
+            (foodClickEmitter)="foodReciver($event)"
+            [flag]="false"></app-food-container>
             }
         </div>
     </div>
