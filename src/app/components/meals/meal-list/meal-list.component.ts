@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, output, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, output, Output, SimpleChanges } from '@angular/core';
 import { MealCardComponent } from "../meal-card/meal-card.component";
 import { MealsService } from '../../../services/meals.service';
 import { Meals } from '../../../interfaces/meals';
@@ -11,8 +11,8 @@ import { Food } from '../../../interfaces/food';
   templateUrl: './meal-list.component.html',
   styleUrl: './meal-list.component.css'
 })
-export class MealListComponent implements OnInit {
-  @Input() dateRecived?: string; //fecha que recibimos del componente de seleccionar fechas
+export class MealListComponent implements OnInit, OnChanges {
+  @Input() dateRecived?: string | null; //fecha que recibimos del componente de seleccionar fechas
   @Output() addModeEmitter = new EventEmitter(); //emite el evento de add-food a my-nutri-track
   @Output() mealTypeEmmiter = new EventEmitter(); //emite el mealType a my-nutri-track
   @Output() mealIdEmmiter = new EventEmitter(); //emite el mealId a my-nutri-track
@@ -28,9 +28,29 @@ export class MealListComponent implements OnInit {
   constructor(private _myMealsService: MealsService) { }
 
 
-  //falta cambiar la fecha hardcodeada por la fecha que me retorne el componente select fecha
+  //cuando se ejecuta se hace un GET de el MEAL de la fecha ACTUAL
   ngOnInit(): void {
-    this._myMealsService.getUserMealByDate('2024-11-01').subscribe(data => {
+    this.arrayBreakfast = [];
+    this.arrayLunch = [];
+    this.arraySnack = [];
+    this.arrayDinner = [];
+
+    this.dateRecived = localStorage.getItem('loginDate');
+    console.log(this.dateRecived)
+    this._myMealsService.getUserMealByDate(this.dateRecived).subscribe(data => {
+      this.meal = data[0];
+      this.arrayBreakfast = this.meal.breakfast;
+      this.arrayLunch = this.meal.lunch;
+      this.arraySnack = this.meal.snack;
+      this.arrayDinner = this.meal.dinner;
+    });
+  }
+
+  //cuando cambia la fecha se vuelve a traer toda la info pero de la fecha seleccionada
+  ngOnChanges(changes: SimpleChanges): void {
+
+
+    this._myMealsService.getUserMealByDate(this.dateRecived).subscribe(data => {
       this.meal = data[0];
       this.arrayBreakfast = this.meal.breakfast;
       this.arrayLunch = this.meal.lunch;

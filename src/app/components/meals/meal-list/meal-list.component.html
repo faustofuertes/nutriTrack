@@ -1,9 +1,12 @@
 <div class="container">
     <div class="mealType">
         <label for="">Breakfast</label>
-        <app-meal-card [arrayFood]="arrayBreakfast" (mealTypeEmitter)="reciveMealType($event)"
-            (deleteEmmiter)="deleteFoodFromMeal($event)" [mealType]="'breakfast'"
-            (addModeEmmiter)="emitAddMode('breakfast')">
+        <app-meal-card 
+        [arrayFood]="arrayBreakfast" 
+        (mealTypeEmitter)="reciveMealType($event)"
+        (deleteEmmiter)="deleteFoodFromMeal($event)" 
+        [mealType]="'breakfast'"
+        (addModeEmmiter)="emitAddMode('breakfast')">
         </app-meal-card>
     </div>
 

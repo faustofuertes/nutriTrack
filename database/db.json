@@ -42,16 +42,6 @@
           "foodType": "breakfast"
         },
         {
-          "id": 90,
-          "name": "Banana",
-          "caloriesPerGram": 4.49,
-          "carbohydrates": 14.78,
-          "proteins": 26.12,
-          "fats": 5.83,
-          "gramQuantity": 25,
-          "foodType": "carb"
-        },
-        {
           "id": 3,
           "name": "Food 3",
           "caloriesPerGram": 3,
@@ -62,13 +52,13 @@
           "foodType": "grains"
         },
         {
-          "id": 5,
-          "name": "Banana",
-          "caloriesPerGram": 0.89,
-          "carbohydrates": 23,
-          "proteins": 1.1,
-          "fats": 0.3,
-          "gramQuantity": 30,
+          "id": 85,
+          "name": "Apple",
+          "caloriesPerGram": 0.52,
+          "carbohydrates": 14,
+          "proteins": 0.3,
+          "fats": 0.2,
+          "gramQuantity": 11,
           "foodType": "fruits",
           "foodDesc": "A typical fruits item with moderate nutritional value."
         },
@@ -79,7 +69,7 @@
           "carbohydrates": 23,
           "proteins": 1.1,
           "fats": 0.3,
-          "gramQuantity": 23,
+          "gramQuantity": 120,
           "foodType": "fruits",
           "foodDesc": "A typical fruits item with moderate nutritional value."
         }
@@ -104,6 +94,17 @@
           "fats": 2,
           "gramQuantity": 23,
           "foodType": "dairy"
+        },
+        {
+          "id": 5,
+          "name": "Banana",
+          "caloriesPerGram": 0.89,
+          "carbohydrates": 23,
+          "proteins": 1.1,
+          "fats": 0.3,
+          "gramQuantity": 100,
+          "foodType": "fruits",
+          "foodDesc": "A typical fruits item with moderate nutritional value."
         }
       ],
       "snack": [

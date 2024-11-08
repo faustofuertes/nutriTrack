@@ -21,7 +21,6 @@ export class MealCardComponent implements OnChanges {
   isExpanded = false;
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('cambio detectado')
     this.calculateCalories();
   }
 

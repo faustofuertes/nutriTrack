@@ -5,7 +5,7 @@
     <div class="info">
         <div class="name">
             <p class="name">{{foodRecived.name}}</p>
-            <p class="calories"><br>{{foodRecived.caloriesPerGram * foodRecived.gramQuantity}} kcal</p>
+            <p class="calories"><br>{{(foodRecived.caloriesPerGram * foodRecived.gramQuantity).toFixed(2)}} kcal</p>
         </div>
         <span class="colorGrey">
             <p>{{foodRecived.gramQuantity}} gr.</p>
