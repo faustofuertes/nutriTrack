@@ -15,6 +15,7 @@ export class MealsService {
 
   constructor(private _httpService: HttpClient) {
     this.currentDate = new Date().toISOString().slice(0, 10);
+    this.userToken = localStorage.getItem('userToken')
   }
 
   //Metodo que se ejecuta SIEMPRE que se inicia sesion para crear una MEAL con la fecha de hoy si es que no existe, caso contrario no hace nada

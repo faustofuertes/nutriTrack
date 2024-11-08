@@ -32,26 +32,6 @@
       "date": "2024-11-01",
       "breakfast": [
         {
-          "id": 3,
-          "name": "Chicken Breast",
-          "caloriesPerGram": 2.5,
-          "carbohydrates": 0,
-          "proteins": 31,
-          "fats": 3.6,
-          "gramQuantity": 7,
-          "foodType": "breakfast"
-        },
-        {
-          "id": 3,
-          "name": "Food 3",
-          "caloriesPerGram": 3,
-          "carbohydrates": 7,
-          "proteins": 7,
-          "fats": 4,
-          "gramQuantity": 29,
-          "foodType": "grains"
-        },
-        {
           "id": 85,
           "name": "Apple",
           "caloriesPerGram": 0.52,
@@ -59,17 +39,6 @@
           "proteins": 0.3,
           "fats": 0.2,
           "gramQuantity": 11,
-          "foodType": "fruits",
-          "foodDesc": "A typical fruits item with moderate nutritional value."
-        },
-        {
-          "id": 5,
-          "name": "Banana",
-          "caloriesPerGram": 0.89,
-          "carbohydrates": 23,
-          "proteins": 1.1,
-          "fats": 0.3,
-          "gramQuantity": 120,
           "foodType": "fruits",
           "foodDesc": "A typical fruits item with moderate nutritional value."
         }
@@ -94,17 +63,6 @@
           "fats": 2,
           "gramQuantity": 23,
           "foodType": "dairy"
-        },
-        {
-          "id": 5,
-          "name": "Banana",
-          "caloriesPerGram": 0.89,
-          "carbohydrates": 23,
-          "proteins": 1.1,
-          "fats": 0.3,
-          "gramQuantity": 100,
-          "foodType": "fruits",
-          "foodDesc": "A typical fruits item with moderate nutritional value."
         }
       ],
       "snack": [
@@ -217,8 +175,32 @@
     {
       "idUser": "_i8liyt",
       "date": "2024-11-08",
-      "breakfast": [],
-      "lunch": [],
+      "breakfast": [
+        {
+          "id": 5,
+          "name": "Banana",
+          "caloriesPerGram": 0.89,
+          "carbohydrates": 23,
+          "proteins": 1.1,
+          "fats": 0.3,
+          "gramQuantity": 2,
+          "foodType": "fruits",
+          "foodDesc": "A typical fruits item with moderate nutritional value."
+        }
+      ],
+      "lunch": [
+        {
+          "id": 140,
+          "name": "Apple",
+          "caloriesPerGram": 0.52,
+          "carbohydrates": 14,
+          "proteins": 0.3,
+          "fats": 0.2,
+          "gramQuantity": 11,
+          "foodType": "fruits",
+          "foodDesc": "A typical fruits item with moderate nutritional value."
+        }
+      ],
       "snack": [],
       "dinner": [],
       "id": 3
