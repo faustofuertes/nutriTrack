@@ -14,7 +14,6 @@ export class MealsService {
   private baseUrl = 'http://localhost:3000/meals'; //URL BASE 
 
   constructor(private _httpService: HttpClient) {
-    this.userToken = localStorage.getItem('userToken');
     this.currentDate = new Date().toISOString().slice(0, 10);
   }
 
@@ -24,6 +23,8 @@ export class MealsService {
       console.error('No hay un usuario autenticado');
       return of(null); // Retorna un observable vacío si no hay token de usuario
     }
+
+    this.userToken = userToken;
 
     return this.getUserMealByDate(this.currentDate).pipe(
       switchMap(result => {

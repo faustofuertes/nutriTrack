@@ -41,6 +41,7 @@ export class MealCardComponent implements OnChanges {
   }
 
   calculateCalories() {
+    this.totalCalories = 0;
     if (this.arrayFood) {
       for (let food of this.arrayFood) {
         this.totalCalories += food.caloriesPerGram * food.gramQuantity;

@@ -42,6 +42,11 @@ export class MealListComponent implements OnInit, OnChanges {
 
   //cuando cambia la fecha se vuelve a traer toda la info pero de la fecha seleccionada
   ngOnChanges(changes: SimpleChanges): void {
+    this.arrayBreakfast = [];
+    this.arrayLunch = [];
+    this.arraySnack = [];
+    this.arrayDinner = [];
+    
     this._myMealsService.getUserMealByDate(this.dateRecived).subscribe(data => {
       this.meal = data[0];
       this.arrayBreakfast = this.meal.breakfast;
