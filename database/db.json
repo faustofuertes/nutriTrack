@@ -14,7 +14,7 @@
     },
     {
       "name": "Fausto",
-      "surname": "Pelusa",
+      "surname": "Fuertes",
       "email": "fausto.fuertes.83@gmail.com",
       "password": "contra123",
       "age": 20,
@@ -38,7 +38,7 @@
           "carbohydrates": 14,
           "proteins": 0.3,
           "fats": 0.2,
-          "gramQuantity": 11,
+          "gramQuantity": 30,
           "foodType": "fruits",
           "foodDesc": "A typical fruits item with moderate nutritional value."
         }
@@ -73,7 +73,7 @@
           "carbohydrates": 20,
           "proteins": 15,
           "fats": 40,
-          "gramQuantity": 100,
+          "gramQuantity": 10,
           "foodType": "snack"
         },
         {
@@ -177,41 +177,27 @@
       "date": "2024-11-08",
       "breakfast": [
         {
-          "id": 5,
-          "name": "Banana",
-          "caloriesPerGram": 0.89,
-          "carbohydrates": 23,
-          "proteins": 1.1,
-          "fats": 0.3,
-          "gramQuantity": 100,
-          "foodType": "fruits",
-          "foodDesc": "A typical fruits item with moderate nutritional value."
-        }
-      ],
-      "lunch": [
-        {
-          "id": 140,
-          "name": "Apple",
-          "caloriesPerGram": 0.52,
-          "carbohydrates": 14,
-          "proteins": 0.3,
-          "fats": 0.2,
-          "gramQuantity": 11,
-          "foodType": "fruits",
-          "foodDesc": "A typical fruits item with moderate nutritional value."
+          "id": 0,
+          "name": "",
+          "caloriesPerGram": 0,
+          "carbohydrates": 0,
+          "proteins": 0,
+          "fats": 0,
+          "gramQuantity": 1111,
+          "foodType": ""
         },
         {
-          "id": 3,
-          "name": "Chicken Breast",
-          "caloriesPerGram": 1.65,
+          "id": 0,
+          "name": "",
+          "caloriesPerGram": 0,
           "carbohydrates": 0,
-          "proteins": 31,
-          "fats": 3.6,
-          "gramQuantity": 666,
-          "foodType": "proteins",
-          "foodDesc": "A typical proteins item with moderate nutritional value."
+          "proteins": 0,
+          "fats": 0,
+          "gramQuantity": 1111,
+          "foodType": ""
         }
       ],
+      "lunch": [],
       "snack": [],
       "dinner": [],
       "id": "3"
@@ -222,32 +208,157 @@
       "date": "2024-11-09",
       "breakfast": [
         {
-          "id": "1",
-          "name": "Popcorn",
-          "caloriesPerGram": 3.87,
-          "carbohydrates": 78,
-          "proteins": 12,
-          "fats": 4.5,
-          "gramQuantity": 30,
-          "foodType": "snacks",
-          "foodDesc": "A typical snacks item with moderate nutritional value."
+          "id": "5",
+          "name": "Banana",
+          "caloriesPerGram": 0.89,
+          "carbohydrates": 23,
+          "proteins": 1.1,
+          "fats": 0.3,
+          "gramQuantity": 111,
+          "foodType": "fruits",
+          "foodDesc": "A typical fruits item with moderate nutritional value."
         }
       ],
       "lunch": [
         {
-          "id": "1",
-          "name": "Popcorn",
-          "caloriesPerGram": 3.87,
-          "carbohydrates": 78,
-          "proteins": 12,
-          "fats": 4.5,
-          "gramQuantity": 15,
-          "foodType": "snacks",
-          "foodDesc": "A typical snacks item with moderate nutritional value."
+          "id": "5",
+          "name": "Banana",
+          "caloriesPerGram": 0.89,
+          "carbohydrates": 23,
+          "proteins": 1.1,
+          "fats": 0.3,
+          "gramQuantity": 111,
+          "foodType": "fruits",
+          "foodDesc": "A typical fruits item with moderate nutritional value."
+        },
+        {
+          "id": "85",
+          "name": "Apple",
+          "caloriesPerGram": 0.52,
+          "carbohydrates": 14,
+          "proteins": 0.3,
+          "fats": 0.2,
+          "gramQuantity": 111,
+          "foodType": "fruits",
+          "foodDesc": "A typical fruits item with moderate nutritional value."
         }
       ],
-      "snack": [],
+      "snack": [
+        {
+          "id": "3",
+          "name": "Chicken Breast",
+          "caloriesPerGram": 1.65,
+          "carbohydrates": 0,
+          "proteins": 31,
+          "fats": 3.6,
+          "gramQuantity": 111,
+          "foodType": "proteins",
+          "foodDesc": "A typical proteins item with moderate nutritional value."
+        }
+      ],
       "dinner": []
+    },
+    {
+      "idUser": "_i8liyt",
+      "date": "2024-11-02",
+      "breakfast": [],
+      "lunch": [],
+      "snack": [],
+      "dinner": [],
+      "id": "4"
+    },
+    {
+      "idUser": "_i8liyt",
+      "date": "2024-11-03",
+      "breakfast": [],
+      "lunch": [],
+      "snack": [],
+      "dinner": [],
+      "id": "5"
+    },
+    {
+      "idUser": "_i8liyt",
+      "date": "2024-11-04",
+      "breakfast": [],
+      "lunch": [],
+      "snack": [],
+      "dinner": [],
+      "id": "6"
+    },
+    {
+      "idUser": "_i8liyt",
+      "date": "2024-11-05",
+      "breakfast": [],
+      "lunch": [],
+      "snack": [],
+      "dinner": [],
+      "id": "7"
+    },
+    {
+      "idUser": "_i8liyt",
+      "date": "2024-11-06",
+      "breakfast": [],
+      "lunch": [],
+      "snack": [],
+      "dinner": [],
+      "id": "8"
+    },
+    {
+      "idUser": "_i8liyt",
+      "date": "2024-11-07",
+      "breakfast": [
+        {
+          "id": "5",
+          "name": "Banana",
+          "caloriesPerGram": 0.89,
+          "carbohydrates": 23,
+          "proteins": 1.1,
+          "fats": 0.3,
+          "gramQuantity": 111,
+          "foodType": "fruits",
+          "foodDesc": "A typical fruits item with moderate nutritional value."
+        }
+      ],
+      "lunch": [],
+      "snack": [],
+      "dinner": [],
+      "id": "9"
+    },
+    {
+      "idUser": "_i8liyt",
+      "date": "2024-11-09",
+      "breakfast": [],
+      "lunch": [],
+      "snack": [],
+      "dinner": [],
+      "id": "10"
+    },
+    {
+      "idUser": "_i8liyt",
+      "date": "2024-11-10",
+      "breakfast": [],
+      "lunch": [],
+      "snack": [],
+      "dinner": [],
+      "id": "11"
+    },
+    {
+      "idUser": "_i8liyt",
+      "date": "2024-11-11",
+      "breakfast": [],
+      "lunch": [],
+      "snack": [],
+      "dinner": [],
+      "id": "12"
+    },
+    {
+      "idUser": "_i8liyt",
+      "date": "2024-11-08",
+      "breakfast": [],
+      "lunch": [],
+      "snack": [],
+      "dinner": [],
+      "id": "13"
     }
   ],
   "foods": [

@@ -6,7 +6,8 @@
         (mealTypeEmitter)="reciveMealType($event)"
         (deleteEmmiter)="deleteFoodFromMeal($event)" 
         [mealType]="'breakfast'"
-        (addModeEmmiter)="emitAddMode('breakfast')">
+        (addModeEmmiter)="emitAddMode('breakfast')"
+        (modifyEmitter)="udpateFoodFromMeal($event)">
         </app-meal-card>
     </div>
 
@@ -17,7 +18,9 @@
         (mealTypeEmitter)="reciveMealType($event)"
         (deleteEmmiter)="deleteFoodFromMeal($event)" 
         [mealType]="'lunch'"
-        (addModeEmmiter)="emitAddMode('lunch')"></app-meal-card>
+        (addModeEmmiter)="emitAddMode('lunch')"
+        (modifyEmitter)="udpateFoodFromMeal($event)">
+    </app-meal-card>
     </div>
 
     <div class="mealType">
@@ -27,7 +30,9 @@
         (mealTypeEmitter)="reciveMealType($event)"
         (deleteEmmiter)="deleteFoodFromMeal($event)" 
         [mealType]="'snack'"
-        (addModeEmmiter)="emitAddMode('snack')"></app-meal-card>
+        (addModeEmmiter)="emitAddMode('snack')"
+        (modifyEmitter)="udpateFoodFromMeal($event)">
+    </app-meal-card>
     </div>
 
     <div class="mealType">
@@ -37,6 +42,8 @@
         (mealTypeEmitter)="reciveMealType($event)"
         (deleteEmmiter)="deleteFoodFromMeal($event)" 
         [mealType]="'dinner'"
-        (addModeEmmiter)="emitAddMode('dinner')"></app-meal-card>
+        (addModeEmmiter)="emitAddMode('dinner')"
+        (modifyEmitter)="udpateFoodFromMeal($event)">
+    </app-meal-card>
     </div>
 </div>

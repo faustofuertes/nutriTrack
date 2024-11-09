@@ -34,3 +34,33 @@ img {
 .highlighted {
     border: 2px solid #66BB6A;
 }
+
+.name-flag {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.food-name-flag {
+    flex: 1;
+}
+
+.food-name-flag p{
+    font-weight: 500;
+}
+
+.cals-gr {
+    display: flex;
+    flex-direction: column; /* Coloca las calorías y gramos en una columna */
+    align-items: flex-end; /* Alinea los textos a la derecha */
+}
+
+.cals-gr p{
+    font-weight: 500;
+}
+
+.cals-gr p,
+.colorGrey p {
+    margin: 0;
+}

@@ -45,7 +45,7 @@ export class MealListComponent implements OnInit, OnChanges {
     this.arrayLunch = [];
     this.arraySnack = [];
     this.arrayDinner = [];
-    
+
     this._myMealsService.getUserMealByDate(this.dateRecived).subscribe(data => {
       this.meal = data[0];
       this.arrayBreakfast = this.meal.breakfast;
@@ -62,16 +62,30 @@ export class MealListComponent implements OnInit, OnChanges {
   deleteFoodFromMeal(food: Food) {
     if (this.mealTypeRecived) {
       this._myMealsService.deleteFoodFromMeal(this.meal?.id, food.id, this.mealTypeRecived)
-        .toPromise() // Convierte el Observable en una Promesa
+        .toPromise()
         .then(() => {
-          // Recarga la página una vez que la eliminación se complete
-          window.location.reload();
+          // Elimina el food del arreglo local correspondiente
+          if (this.mealTypeRecived === 'breakfast') {
+            this.arrayBreakfast = this.arrayBreakfast?.filter(f => f.id !== food.id);
+          } else if (this.mealTypeRecived === 'lunch') {
+            this.arrayLunch = this.arrayLunch?.filter(f => f.id !== food.id);
+          } else if (this.mealTypeRecived === 'snack') {
+            this.arraySnack = this.arraySnack?.filter(f => f.id !== food.id);
+          } else if (this.mealTypeRecived === 'dinner') {
+            this.arrayDinner = this.arrayDinner?.filter(f => f.id !== food.id);
+          }
         })
         .catch(error => {
           console.error('Error al eliminar la comida:', error);
         });
     } else {
       console.log('NO MANDO NADA');
+    }
+  }
+
+  udpateFoodFromMeal(food: Food) {
+    if (this.mealTypeRecived) {
+      this._myMealsService.updateFoodFromMeal(this.meal?.id, food, this.mealTypeRecived).subscribe();
     }
   }
 

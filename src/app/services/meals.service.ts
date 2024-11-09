@@ -75,12 +75,12 @@ export class MealsService {
     return this._httpService.post<Meals>(this.baseUrl, meal);
   }
 
+
   //metodos para retornar-agregar-eliminar-editar una FOOD a un MEAL especifico
 
   //elimina una FOOD especifica de una MEAL especifica de una MEALTYPE especifica
   deleteFoodFromMeal(mealId: string | undefined, foodId: number | undefined, mealType: 'breakfast' | 'lunch' | 'snack' | 'dinner' | undefined): Observable<Meals> {
-    // Asegúrate de manejar casos donde mealId, foodId o mealType sean indefinidos
-    console.log(mealType, foodId)
+
     if (!mealId || foodId === undefined || !mealType) {
       return throwError('Faltan parámetros necesarios');
     }
@@ -97,8 +97,6 @@ export class MealsService {
       switchMap(updatedMeal => this._httpService.put<Meals>(`${this.baseUrl}/${mealId}`, updatedMeal))
     );
   }
-
-
 
   addFoodToMeal(
     mealId: number | undefined,
@@ -126,7 +124,26 @@ export class MealsService {
     );
   }
 
+  updateFoodFromMeal(mealId: string | undefined, updatedFoodData: Food, mealType: 'breakfast' | 'lunch' | 'snack' | 'dinner' | undefined): Observable<Meals> {
 
+    if (!mealId || updatedFoodData.id === undefined || !mealType || !updatedFoodData) {
+      return throwError('Faltan parámetros necesarios');
+    }
+
+    return this._httpService.get<Meals>(`${this.baseUrl}/${mealId}`).pipe(
+      map((meal: Meals) => {
+        // Buscar y actualizar el alimento en el array
+        if (meal[mealType]) {
+          meal[mealType] = meal[mealType].map(food =>
+            food.id === updatedFoodData.id ? { ...food, ...updatedFoodData } : food
+          );
+        }
+        return meal;
+      }),
+      // Enviar el objeto meal actualizado al servidor para persistir los cambios
+      switchMap(updatedMeal => this._httpService.put<Meals>(`${this.baseUrl}/${mealId}`, updatedMeal))
+    );
+  }
 
 
 }

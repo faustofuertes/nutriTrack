@@ -4,18 +4,19 @@ import { Meals } from '../../../interfaces/meals';
 import { CommonModule } from '@angular/common';
 import { MacrosChartComponent } from "../macros-chart/macros-chart.component";
 import { UserService } from '../../../services/user.service';
+import { ProgressBarComponent } from "../progress-bar/progress-bar.component";
 
 @Component({
   selector: 'app-meal-statistics',
   standalone: true,
-  imports: [CommonModule, MacrosChartComponent],
+  imports: [CommonModule, ProgressBarComponent],
   templateUrl: './meal-statistics.component.html',
   styleUrl: './meal-statistics.component.css'
 })
 export class MealStatisticsComponent implements OnInit, OnChanges {
   @Input() dateRecivedFromNT?: string | null; //meal DATE recibido de my-nutri-track
   meals: Meals[] = [{ id: '', idUser: '', date: '', breakfast: [], lunch: [], snack: [], dinner: [] }];
-  totalCalories?: number;
+  totalCalories: number = 0;
   totalProteins?: number;
   totalFats?: number;
   totalCarbs?: number;

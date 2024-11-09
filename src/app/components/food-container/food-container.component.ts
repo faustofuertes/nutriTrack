@@ -15,12 +15,14 @@ export class FoodContainerComponent {
   @Output() foodClickEmitter = new EventEmitter(); //emisor de evento cuando se hace click en una comida
   @Input() flag?: boolean; //false = se renderizan las cals * 100 || true = se renderizan las calorias en base a los gramos
 
+  isHighlighted = false;
+
   emitFoodClick() {
     this.foodClickEmitter.emit(this.foodRecived);
   }
-  isHighlighted = false;
 
   toggleHighlight() {
       this.isHighlighted = !this.isHighlighted;
   }
+  
 }

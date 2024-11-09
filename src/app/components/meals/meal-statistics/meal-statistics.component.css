@@ -29,3 +29,11 @@
     font-size: 22px;
     font-weight: 500;
 }
+
+.color{
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: white;
+    color: #66BB6A;
+    font-weight: 500;
+}

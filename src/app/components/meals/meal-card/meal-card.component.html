@@ -6,10 +6,19 @@
             <i class="fas fa-plus"></i>
         </button>
         <label class="totalCalories">{{(totalCalories).toFixed(2)}} kcals.</label>
-        <button (click)="toggleExpand()" class="chevron-button" [ngClass]="{'rotate': isExpanded}">
+        <button (click)="editMode = false" (click)="toggleExpand()" class="chevron-button" [ngClass]="{'rotate': isExpanded}">
             <i class="fas" [ngClass]="isExpanded ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
         </button>
     </div>
+
+    @if(editMode){
+        <div class="editMode">
+            <button (click)="toggleEditMode()" class="btn-cancel"><i class="fas fa-times"></i></button>
+            <input name="newQuantity" [(ngModel)]="newGramQuantity" type="number" [min]="0">
+            <button (click)="emitFoodModified()" (click)="toggleEditMode()" class="btn-ok"><i class="fas fa-check"></i></button>
+
+        </div>
+        }
 
     <div class="food-list" [ngClass]="{'expanded': isExpanded}">
         <div *ngIf="isExpanded">
@@ -19,7 +28,7 @@
                 <button class="btn-delete" (click)="emitMealType()" (click)="emitDelete(f)">
                     <i class="fas fa-times"></i>
                 </button>
-                <button class="btn-edit">
+                <button (click)="emitMealType()" (click)="toggleEditMode()" (click)="saveFoodToUpdate(f)" class="btn-edit">
                     <i class="fas fa-pencil-alt"></i>
                 </button>
             </div>
@@ -27,3 +36,4 @@
         </div>
     </div>
 </div>
+
