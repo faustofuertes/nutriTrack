@@ -25,6 +25,7 @@ export class UserService {
       })
     );
   }
+  
 
 
   modifyUser(id:string ,user:User | null):Observable<User>//esto modifica el usaurio

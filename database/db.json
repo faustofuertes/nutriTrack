@@ -14,14 +14,14 @@
     },
     {
       "name": "Fausto",
-      "surname": "Fuertes",
+      "surname": "Pelusa",
       "email": "fausto.fuertes.83@gmail.com",
       "password": "contra123",
-      "height": 183,
-      "weight": 73,
-      "gender": "masculino",
       "age": 20,
-      "caloriesNeeded": 2445.78125,
+      "weight": 73,
+      "height": 180,
+      "gender": "masculino",
+      "caloriesNeeded": 2420,
       "id": "_i8liyt"
     }
   ],
@@ -233,7 +233,19 @@
           "foodDesc": "A typical snacks item with moderate nutritional value."
         }
       ],
-      "lunch": [],
+      "lunch": [
+        {
+          "id": "1",
+          "name": "Popcorn",
+          "caloriesPerGram": 3.87,
+          "carbohydrates": 78,
+          "proteins": 12,
+          "fats": 4.5,
+          "gramQuantity": 15,
+          "foodType": "snacks",
+          "foodDesc": "A typical snacks item with moderate nutritional value."
+        }
+      ],
       "snack": [],
       "dinner": []
     }

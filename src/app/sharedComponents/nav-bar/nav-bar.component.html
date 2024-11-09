@@ -6,6 +6,8 @@
     <li *ngIf="isLoggedIn"><a href="http://localhost:4200/recetas">Recipes</a></li>
     <li *ngIf="!isLoggedIn"><a class="nav-item" (click)="login()">Sign In</a></li>
     <li *ngIf="!isLoggedIn"><button class="btn-empezar" (click)="navigateToRegister()">Register</button></li>
+    <li *ngIf="isLoggedIn"><a class="nav-item" (click)="navigateToUserProfile()">Profile</a></li>
+
     <button class="btn-nutriTrack" *ngIf="isLoggedIn" (click)="navigateToNutriTrack()">
       <span class="text">My Nutri Track</span>
     </button>
@@ -13,7 +15,6 @@
       <a class="nav-item" (click)="logout()"><i class="fas fa-user-circle"></i></a>
       <div class="account-menu" *ngIf="accountMenuVisible">
         <ul>
-          <li><a class="nav-item" (click)="navigateToUserProfile()">Profile</a></li>
           <li><a class="nav-item" (click)="logout()">Logout</a></li>
         </ul>
       </div>

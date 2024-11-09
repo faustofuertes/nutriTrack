@@ -1,14 +1,29 @@
-<div *ngIf="user">
-    <h2>Perfil de {{ user.name }} {{ user.surname }}</h2>
-    <p>Email: {{ user.email }}</p>
-    <p>Edad: {{ user.age }}</p>
-    <p>Peso: {{ user.weight }} kg</p>
-    <p>Altura: {{ user.height }} cm</p>
-    <p>Género: {{ user.gender }}</p>
+<div class="container" *ngIf="user">
+    <!-- Perfil del usuario -->
+    <div class="meals">
+        <div class="user-profile">
+            <h2>Perfil de {{ user.name }} {{ user.surname }}</h2>
+            <p>Email: {{ user.email }}</p>
+            <p>Edad: {{ user.age }}</p>
+            <p>Peso: {{ user.weight }} kg</p>
+            <p>Altura: {{ user.height }} cm</p>
+            <p>Género: {{ user.gender }}</p>
 
-    <h3>Datos Nutricionales</h3>
-    <p>TMB: {{ user.caloriesNeeded }} kcal</p>
+            <button class="btn-edit">
+                <a [routerLink]="['/edit', user.id]">Modificar</a>
+            </button>
+        </div>
+    </div>
 
-<div *ngIf="!user">
-<p>No se pudo cargar el perfil del usuario.</p>
+    <!-- Datos Nutricionales -->
+    <div class="graph">
+        <div class="nutrition-data">
+            <h3>Datos Nutricionales</h3>
+            <p><strong>TMB:</strong> {{ user.caloriesNeeded }} kcal</p>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!user" class="no-profile-message">
+    <p>No se pudo cargar el perfil del usuario.</p>
 </div>

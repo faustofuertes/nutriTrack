@@ -6,6 +6,7 @@ import { RegisterFormComponent } from './pages/register-form/register-form.compo
 import { UserProfilePageComponent } from './pages/user/user-profile-page/user-profile-page.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { MyNutriTrackComponent } from './pages/my-nutri-track/my-nutri-track.component';
+import { UserEditComponent } from './components/user/user-edit/user-edit.component';
 
 export const routes: Routes = [
     { path: 'alimentos', component: AlimentosComponent },
@@ -17,6 +18,9 @@ export const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent, // Ruta pública para el login
+    },
+    {
+         path: 'edit/:id', component: UserEditComponent 
     },
     { path: '', component: LandingComponent }
 ];
