@@ -1,6 +1,6 @@
 <header class="header">
   <ul>
-    <li class="logo-item"><img class="logo" src="https://faustofuertes.github.io/img/LOGO.png" alt=""></li>
+    <li class="logo-item"><img class="logo" src="https://github.com/faustofuertes/faustofuertes.github.io/blob/master/img/logoFinal.png?raw=true" alt=""></li>
     <li *ngIf="!isLoggedIn"><a (click)="navigateToHome()">Home</a></li>
     <li><a href="http://localhost:4200/alimentos">Food</a></li>
     <li *ngIf="isLoggedIn"><a href="http://localhost:4200/recetas">Recipes</a></li>
@@ -13,11 +13,6 @@
     </button>
     <li *ngIf="isLoggedIn" (click)="toggleAccountMenu()">
       <a class="nav-item" (click)="logout()"><i class="fas fa-user-circle"></i></a>
-      <div class="account-menu" *ngIf="accountMenuVisible">
-        <ul>
-          <li><a class="nav-item" (click)="logout()">Logout</a></li>
-        </ul>
-      </div>
     </li>
   </ul>
 </header>

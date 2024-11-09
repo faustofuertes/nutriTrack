@@ -217,6 +217,48 @@
           "gramQuantity": 111,
           "foodType": "fruits",
           "foodDesc": "A typical fruits item with moderate nutritional value."
+        },
+        {
+          "id": 0,
+          "name": "",
+          "caloriesPerGram": 0,
+          "carbohydrates": 0,
+          "proteins": 0,
+          "fats": 0,
+          "gramQuantity": 1.2312312312312313e+37,
+          "foodType": ""
+        },
+        {
+          "id": 0,
+          "name": "",
+          "caloriesPerGram": 0,
+          "carbohydrates": 0,
+          "proteins": 0,
+          "fats": 0,
+          "gramQuantity": 31231231123,
+          "foodType": ""
+        },
+        {
+          "id": "5",
+          "name": "Banana",
+          "caloriesPerGram": 0.89,
+          "carbohydrates": 23,
+          "proteins": 1.1,
+          "fats": 0.3,
+          "gramQuantity": null,
+          "foodType": "fruits",
+          "foodDesc": "A typical fruits item with moderate nutritional value."
+        },
+        {
+          "id": "19",
+          "name": "Banana",
+          "caloriesPerGram": 0.89,
+          "carbohydrates": 23,
+          "proteins": 1.1,
+          "fats": 0.3,
+          "gramQuantity": 213,
+          "foodType": "fruits",
+          "foodDesc": "A typical fruits item with moderate nutritional value."
         }
       ],
       "lunch": [
@@ -297,7 +339,19 @@
     {
       "idUser": "_i8liyt",
       "date": "2024-11-06",
-      "breakfast": [],
+      "breakfast": [
+        {
+          "id": "5",
+          "name": "Banana",
+          "caloriesPerGram": 0.89,
+          "carbohydrates": 23,
+          "proteins": 1.1,
+          "fats": 0.3,
+          "gramQuantity": 123123,
+          "foodType": "fruits",
+          "foodDesc": "A typical fruits item with moderate nutritional value."
+        }
+      ],
       "lunch": [],
       "snack": [],
       "dinner": [],
