@@ -3,6 +3,7 @@ import { MealsService } from '../../../services/meals.service';
 import { Meals } from '../../../interfaces/meals';
 import { CommonModule } from '@angular/common';
 import { MacrosChartComponent } from "../macros-chart/macros-chart.component";
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-meal-statistics',
@@ -19,7 +20,16 @@ export class MealStatisticsComponent implements OnInit, OnChanges {
   totalFats?: number;
   totalCarbs?: number;
 
-  constructor(private _myMealsService: MealsService) { }
+
+   userTokenId:string | null  = localStorage.getItem('userToken')
+  caloriasUsuario: number = 0;
+
+  constructor(
+
+    private _myMealsService: MealsService,
+    private _userService: UserService
+  ) { }
+
 
   ngOnInit(): void {
     this.dateRecivedFromNT = localStorage.getItem('loginDate');
@@ -31,6 +41,19 @@ export class MealStatisticsComponent implements OnInit, OnChanges {
       this.calculateFats();
       this.calculateCarbs();
     });
+
+
+    if (this.userTokenId) 
+      {
+      this._userService.getUserById(this.userTokenId).subscribe((data) => {
+        if (data.caloriesNeeded) {
+          this.caloriasUsuario = data.caloriesNeeded;
+        }
+      });
+    }
+
+
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -41,6 +64,18 @@ export class MealStatisticsComponent implements OnInit, OnChanges {
       this.calculateFats();
       this.calculateCarbs();
     });
+
+
+
+    if (this.userTokenId) 
+      {
+      this._userService.getUserById(this.userTokenId).subscribe((data) => {
+        if (data.caloriesNeeded) {
+          this.caloriasUsuario = data.caloriesNeeded;
+        }
+      });
+    }
+  
   }
 
   calculateCalories() {
