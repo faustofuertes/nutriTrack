@@ -60,9 +60,6 @@ export class MealsService {
     );
   }
 
-
-
-
   //Retorna todos los meals del usuario con la sesion iniciada usando userToken
   getUserMeals(): Observable<Meals[]> {
     return this._httpService.get<Meals[]>(`${this.baseUrl}?idUser=${this.userToken}`); // URL de todas las meals de un usuario específico
@@ -77,7 +74,6 @@ export class MealsService {
   postMeal(meal: Meals): Observable<Meals> {
     return this._httpService.post<Meals>(this.baseUrl, meal);
   }
-
 
   //metodos para retornar-agregar-eliminar-editar una FOOD a un MEAL especifico
 

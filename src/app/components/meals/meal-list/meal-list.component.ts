@@ -30,7 +30,6 @@ export class MealListComponent implements OnInit, OnChanges {
   //cuando se ejecuta se hace un GET de el MEAL de la fecha ACTUAL
   ngOnInit(): void {
     this.dateRecived = localStorage.getItem('loginDate');
-    console.log(this.dateRecived)
     this._myMealsService.getUserMealByDate(this.dateRecived).subscribe(data => {
       this.meal = data[0];
       this.arrayBreakfast = this.meal.breakfast;

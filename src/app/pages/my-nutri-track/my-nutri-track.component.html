@@ -13,6 +13,7 @@
     
     <div class="graph">
         <app-date-picker (datePickedEmitter)="dateReciver($event)"></app-date-picker>
+        <app-meal-statistics [dateRecivedFromNT]="dateRecivedFromDP"></app-meal-statistics>
     </div>
 
 </div>

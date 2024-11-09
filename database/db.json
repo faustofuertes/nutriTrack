@@ -183,7 +183,7 @@
           "carbohydrates": 23,
           "proteins": 1.1,
           "fats": 0.3,
-          "gramQuantity": 2,
+          "gramQuantity": 100,
           "foodType": "fruits",
           "foodDesc": "A typical fruits item with moderate nutritional value."
         }
@@ -199,6 +199,17 @@
           "gramQuantity": 11,
           "foodType": "fruits",
           "foodDesc": "A typical fruits item with moderate nutritional value."
+        },
+        {
+          "id": 3,
+          "name": "Chicken Breast",
+          "caloriesPerGram": 1.65,
+          "carbohydrates": 0,
+          "proteins": 31,
+          "fats": 3.6,
+          "gramQuantity": 666,
+          "foodType": "proteins",
+          "foodDesc": "A typical proteins item with moderate nutritional value."
         }
       ],
       "snack": [],

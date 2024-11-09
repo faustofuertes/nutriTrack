@@ -9,15 +9,16 @@ import { FormsModule } from '@angular/forms';
 import { MealsService } from '../../services/meals.service';
 import { DatePickerComponent } from "../../components/meals/date-picker/date-picker.component";
 import { lastValueFrom } from 'rxjs';
+import { MealStatisticsComponent } from "../../components/meals/meal-statistics/meal-statistics.component";
 
 @Component({
   selector: 'app-my-nutri-track',
   standalone: true,
-  imports: [NavBarComponent, MealListComponent, BarraBuscadoraComidasComponent, FoodContainerComponent, FormsModule, DatePickerComponent],
+  imports: [NavBarComponent, MealListComponent, BarraBuscadoraComidasComponent, FoodContainerComponent, FormsModule, DatePickerComponent, MealStatisticsComponent],
   templateUrl: './my-nutri-track.component.html',
   styleUrl: './my-nutri-track.component.css'
 })
-export class MyNutriTrackComponent implements OnInit{
+export class MyNutriTrackComponent  {
   addMode = false; //muestra o no el modo add-food
   arrayFoods?: Food[]; //array food q se usa en el addMode
   foodToAdd: Food = { id: 0, name: '', caloriesPerGram: 0, carbohydrates: 0, proteins: 0, fats: 0, gramQuantity: 0, foodType: '' }; //comida seleccionada para agregar
@@ -27,11 +28,6 @@ export class MyNutriTrackComponent implements OnInit{
   dateRecivedFromDP?: string; //date que recibimos del datePicker (DP)
 
   constructor(private _myFoodService: FoodApiService, private _myMealService: MealsService) { }
-
-  ngOnInit(): void {
-    // Puedes asignar un valor inicial si lo necesitas
-    
-  }
 
   //llena el arrayFoods de todas las foods que coinciden con el foodName que se ingreso en el componenteBuscador
   foodNameReciver(foodName: string) {
