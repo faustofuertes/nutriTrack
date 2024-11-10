@@ -1,28 +1,51 @@
-# NutriTrack
+# NutriTrack - Aplicación Nutricional
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
+Este es el proyecto final para la Universidad Tecnológica Nacional (UTN), desarrollado por Federico Sosa, Fausto Fuertes, Iván Badoza, Santiago Camarda e Ignacio Volpe. El proyecto es una aplicación nutricional que permite a los usuarios gestionar sus comidas diarias y tener un mayor control sobre la ingesta de macronutrientes.
 
-## Development server
+## Desarrolladores
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Federico Sosa - [LinkedIn](https://www.linkedin.com/in/federico-sosa-533512239/)
+- Fausto Fuertes
+- Iván Badoza - [LinkedIn](https://www.linkedin.com/in/ivan-badoza-5995bb337/)
+- Santiago Camarda
+- Ignacio Volpe
 
-## Code scaffolding
+## Instalación y Uso
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Clonar el Repositorio
+Para comenzar, clona el repositorio a tu máquina local usando:
 
-## Build
+$ git clone https://github.com/faustofuertes/nutriTrack.git
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Luego, accede a la carpeta del proyecto:
 
-## Running unit tests
+$ cd nutriTrack
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Instalar Dependencias
+Una vez dentro del proyecto, instala las dependencias necesarias:
 
-## Running end-to-end tests
+$ npm install
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Correr los Endpoints
+Para correr los endpoints, debes iniciar el servidor `json-server`. Asegúrate de que estés en el directorio raíz del proyecto y ejecuta el siguiente comando:
 
-## Further help
+$ json-server --watch db.json
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# nutriTrackFausto
+### Levantar la Aplicación
+Finalmente, para levantar la aplicación Angular, ejecuta:
+
+$ ng serve -o
+
+Esto abrirá la aplicación en tu navegador predeterminado.
+
+## Contribución
+Las contribuciones son bienvenidas. Si deseas contribuir a este proyecto, sigue estos pasos:
+
+1. Haz un 'Fork' del proyecto.
+2. Crea tu rama de características (`git checkout -b feature/AmazingFeature`).
+3. Realiza tus cambios y haz un 'commit' (`git commit -m 'Add some AmazingFeature'`).
+4. Sube tu rama (`git push origin feature/AmazingFeature`).
+5. Abre un 'Pull Request'.
+
+## Licencia
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
