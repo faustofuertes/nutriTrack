@@ -21,11 +21,27 @@ export class DatePickerComponent implements OnInit {
   }
 
   plusOneDay() {
+    // if (this.date) {
+    //   this.date = this.addOrSubtractDays(this.date, 1);
+    //   this.emitDate();
+    // }
+
+    //lo cambie para que no pueda avanzar para adelante , si algun problema se vuelve a lo que esta comentado
+
     if (this.date) {
-      this.date = this.addOrSubtractDays(this.date, 1);
-      this.emitDate();
+      const currentDate = this.getCurrentDate();
+      const nextDate = this.addOrSubtractDays(this.date, 1);
+
+
+      if (nextDate <= currentDate) {
+        this.date = nextDate;
+        this.emitDate();
+      }
     }
   }
+
+
+
 
   minusOneDay() {
     if (this.date) {
