@@ -13,6 +13,8 @@ export class BarraBuscadoraComidasComponent {
   foodName?:string;
 
   emitSearch(){
+    console.log(this.foodName);  // Verifica si el valor se emite correctamente
+
     this.foodNameEmitter.emit(this.foodName);
   }
 }

@@ -25,8 +25,11 @@ export class AlimentosComponent {
   constructor(private _foodApi: FoodApiService) { }
 
   reciveFoodName(foodName: string) {
+    this.foodNameRecived = foodName;
+    console.log(this.foodNameRecived)
     this._foodApi.getFoods(foodName).subscribe(data => {
       this.arrayFoods = data;
+      console.log(data)
     })
   }
 
