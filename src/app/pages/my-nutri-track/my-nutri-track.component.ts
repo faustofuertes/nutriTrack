@@ -59,19 +59,31 @@ export class MyNutriTrackComponent  {
     this.addMode = !this.addMode;
   }
 
-  //agrega la comida seleccionada a la meal que seleccionamos
   addFoodToMeal() {
+    // Validación para asegurarse de que foodToAdd y foodQuantity son válidos
+    if (!this.foodToAdd || !this.foodToAdd.id) {
+      alert("Please select a valid food.");
+      return;
+    }
+  
+    if (this.foodQuantity <= 0 || isNaN(this.foodQuantity)) {
+      alert("Please enter a valid quantity greater than 0.");
+      return;
+    }
+  
     this.foodToAdd.gramQuantity = this.foodQuantity;
+  
     lastValueFrom(
       this._myMealService.addFoodToMeal(this.mealIdRecived, this.foodToAdd, this.mealTypeRecived)
     )
       .then(() => {
-        // Recarga la página una vez que la adición se complete
+        console.log("Food added successfully");  // Verifica que el código entre en este bloque
+        // Recargar la página una vez que la adición se complete
         window.location.reload();
       })
       .catch(error => {
         console.error('Error al añadir la comida:', error);
       });
   }
-
+  
 }

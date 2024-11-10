@@ -157,3 +157,24 @@ input[type="number"]::-webkit-inner-spin-button {
 .btn-cancel:hover {
     background-color: darkred;
 }
+
+
+
+.food-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.food-list.expanded {
+    max-height: 300px; /* Define la altura máxima cuando esté expandido */
+    overflow-y: auto; /* Activa el scroll vertical */
+    padding-right: 10px; /* Espacio para el scroll */
+    padding-bottom: 20px; /* Espacio adicional para evitar que el último elemento se oculte */
+}
+
+
+
+
+
+

@@ -35,6 +35,18 @@
       "gender": "masculino",
       "age": 29,
       "caloriesNeeded": 2684.6875
+    },
+    {
+      "id": "0193",
+      "name": "santiago",
+      "surname": "camarda",
+      "email": "santi.camrda@gmail.com",
+      "password": "1819",
+      "height": 180,
+      "weight": 94,
+      "gender": "female",
+      "age": 21,
+      "caloriesNeeded": 2473.625
     }
   ],
   "meals": [
@@ -402,7 +414,19 @@
     {
       "idUser": "_i8liyt",
       "date": "2024-11-10",
-      "breakfast": [],
+      "breakfast": [
+        {
+          "id": "2",
+          "name": "Egg",
+          "caloriesPerGram": 1.55,
+          "carbohydrates": 1.1,
+          "proteins": 13,
+          "fats": 11,
+          "gramQuantity": 47,
+          "foodType": "proteins",
+          "foodDesc": "A typical proteins item with moderate nutritional value."
+        }
+      ],
       "lunch": [],
       "snack": [],
       "dinner": [],
@@ -425,6 +449,99 @@
       "snack": [],
       "dinner": [],
       "id": "13"
+    },
+    {
+      "id": "cbab",
+      "idUser": "0193",
+      "date": "2024-11-10",
+      "breakfast": [
+        {
+          "id": "2",
+          "name": "Egg",
+          "caloriesPerGram": 1.55,
+          "carbohydrates": 1.1,
+          "proteins": 13,
+          "fats": 11,
+          "gramQuantity": 22,
+          "foodType": "proteins",
+          "foodDesc": "A typical proteins item with moderate nutritional value."
+        },
+        {
+          "id": "2",
+          "name": "Egg",
+          "caloriesPerGram": 1.55,
+          "carbohydrates": 1.1,
+          "proteins": 13,
+          "fats": 11,
+          "gramQuantity": 300,
+          "foodType": "proteins",
+          "foodDesc": "A typical proteins item with moderate nutritional value."
+        }
+      ],
+      "lunch": [],
+      "snack": [],
+      "dinner": [
+        {
+          "id": 0,
+          "name": "",
+          "caloriesPerGram": 0,
+          "carbohydrates": 0,
+          "proteins": 0,
+          "fats": 0,
+          "gramQuantity": 0,
+          "foodType": ""
+        },
+        {
+          "id": 0,
+          "name": "",
+          "caloriesPerGram": 0,
+          "carbohydrates": 0,
+          "proteins": 0,
+          "fats": 0,
+          "gramQuantity": 0,
+          "foodType": ""
+        },
+        {
+          "id": 0,
+          "name": "",
+          "caloriesPerGram": 0,
+          "carbohydrates": 0,
+          "proteins": 0,
+          "fats": 0,
+          "gramQuantity": 0,
+          "foodType": ""
+        },
+        {
+          "id": 0,
+          "name": "",
+          "caloriesPerGram": 0,
+          "carbohydrates": 0,
+          "proteins": 0,
+          "fats": 0,
+          "gramQuantity": 0,
+          "foodType": ""
+        },
+        {
+          "id": 0,
+          "name": "",
+          "caloriesPerGram": 0,
+          "carbohydrates": 0,
+          "proteins": 0,
+          "fats": 0,
+          "gramQuantity": 0,
+          "foodType": ""
+        },
+        {
+          "id": 0,
+          "name": "",
+          "caloriesPerGram": 0,
+          "carbohydrates": 0,
+          "proteins": 0,
+          "fats": 0,
+          "gramQuantity": 0,
+          "foodType": ""
+        }
+      ]
     }
   ],
   "foods": [

@@ -30,6 +30,7 @@ export class MealCardComponent implements OnChanges {
   }
 
   emitDelete(food: Food) {
+    
     this.deleteEmmiter.emit(food);
   }
 
@@ -38,6 +39,7 @@ export class MealCardComponent implements OnChanges {
   }
 
   emitAddMode() {
+    
     this.addModeEmmiter.emit();
   }
 

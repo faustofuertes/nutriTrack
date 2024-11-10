@@ -58,7 +58,7 @@ export class MealListComponent implements OnInit, OnChanges {
   reciveMealType(mealType: 'breakfast' | 'lunch' | 'snack' | 'dinner' | undefined) {
     this.mealTypeRecived = mealType;
   }
-
+  
   deleteFoodFromMeal(food: Food) {
     if (this.mealTypeRecived) {
       this._myMealsService.deleteFoodFromMeal(this.meal?.id, food.id, this.mealTypeRecived)
@@ -74,6 +74,9 @@ export class MealListComponent implements OnInit, OnChanges {
           } else if (this.mealTypeRecived === 'dinner') {
             this.arrayDinner = this.arrayDinner?.filter(f => f.id !== food.id);
           }
+  
+          // Recargar la página después de eliminar el alimento
+          window.location.reload();
         })
         .catch(error => {
           console.error('Error al eliminar la comida:', error);
@@ -82,15 +85,33 @@ export class MealListComponent implements OnInit, OnChanges {
       console.log('NO MANDO NADA');
     }
   }
-
-  udpateFoodFromMeal(food: Food) {
-    if (this.mealTypeRecived) {
-      this._myMealsService.updateFoodFromMeal(this.meal?.id, food, this.mealTypeRecived).subscribe();
+  
+  updateFoodFromMeal(food: Food) {
+    // Verificar que la cantidad de comida no sea menor que 0
+    if (food.gramQuantity < 0) {
+      alert("Please enter a valid quantity. The quantity cannot be less than 0.");
+      return; // Evita que se haga la actualización si la cantidad es inválida
     }
+  
+    if (this.mealTypeRecived) {
+      this._myMealsService.updateFoodFromMeal(this.meal?.id, food, this.mealTypeRecived)
+        .toPromise()
+        .then(() => {
+          // Recargar la página una vez que la actualización se complete
+          window.location.reload();
+        })
+        .catch((error) => {
+          console.error('Error updating the food:', error);
+        });
+    } else {
+      console.log("Meal type not provided");
+    }
+   
   }
-
+  
   //Le pasa el mealType y el mealId a my-nutri-track cunado se clickea el boton de + (añadir food)
   emitAddMode(mealType: 'breakfast' | 'lunch' | 'snack' | 'dinner' | undefined) {
+
     this.mealTypeEmmiter.emit(mealType);
     this.mealIdEmmiter.emit(this.meal?.id);
     this.addModeEmitter.emit()

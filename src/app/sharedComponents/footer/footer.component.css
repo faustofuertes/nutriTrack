@@ -1,8 +1,22 @@
 /* Asegura que el contenedor principal cubra toda la altura disponible */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+}
 
+/* El contenedor de contenido (que tiene la lista y los botones) ocupará el espacio disponible */
+.container {
+  flex: 1; /* Esto permite que el contenedor se expanda y ocupe el espacio restante */
+  overflow-y: auto; /* Si el contenido excede la altura, aparecerá un scroll */
+  padding: 10px;
+  border: 2px dashed black;
+  border-radius: 30px;
+  width: 500px;
+  margin: auto;
+}
 
-
-/* El footer se mantiene al final de la página */
+/* Estilos del footer */
 .footer {
   background-image: linear-gradient(155deg, #393540, #27232f);
   color: #ecf0f1;
@@ -10,27 +24,23 @@
   text-align: center;
   z-index: 2;
   backdrop-filter: blur(10px); /* Efecto de desenfoque */
-  width: 100%; /* Asegura que el footer ocupe todo el ancho */
-  bottom: 0; /* Lo coloca en la parte inferior */
-  
+  width: 100%;
+  bottom: 0;
+  position: relative; /* El footer se mantiene al final del contenedor */
 }
 
+/* Estilos internos del footer */
 .footer-content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Otros estilos del footer */
 .footer-brand h2 {
   font-size: 1.8em;
   color: #66BB6A; /* Color de marca */
   margin: 0;
-}
-
-.footer-brand p {
-  font-size: 1em;
-  margin-top: 5px;
-  color: #bdc3c7;
 }
 
 .footer-links {
@@ -67,7 +77,7 @@
   transform: scale(1.1);
 }
 
-/* Asegura que el footer no quede superpuesto al contenido si la pantalla es pequeña */
+/* Responsividad */
 @media (max-width: 768px) {
   .footer {
       padding: 15px;
