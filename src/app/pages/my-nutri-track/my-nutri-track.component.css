@@ -3,6 +3,7 @@
     width: 100%;
     height: 100vh;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .meals,
@@ -56,7 +57,6 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2), 0px 8px 32px rgba(0, 0, 0, 0.15);
-
 }
 
 .add-controls {
@@ -75,7 +75,7 @@
     border-radius: 5px;
     display: flex;
     justify-content: center;
-    align-items: centers;
+    align-items: center;
 }
 
 .input-quantity {
@@ -87,7 +87,6 @@
 }
 
 input[type="number"] {
-
     border-radius: 5px;
     padding: 8px;
     outline: none;
@@ -102,7 +101,71 @@ input[type="number"]:focus {
 .food-list {
     margin-top: 20px;
     max-height: 300px;
-    /* Limita la altura y permite el scroll */
     overflow-y: auto;
     width: 100%;
+}
+
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        overflow-y: auto;
+    }
+
+    .graph {
+        order: 2;
+        width: 100%;
+        padding: 20px;
+        height: 50vh;
+        margin-top: 10px;
+    }
+
+    .meals {
+        order: 1;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .container-add-food {
+        width: 90%;
+        max-width: 600px;
+        padding: 15px;
+    }
+
+    .add-controls {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .btn-add {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .input-quantity {
+        width: 50px;
+    }
+
+    .food-list {
+        max-height: 200px;
+    }
+}
+
+@media (max-width: 800px) and (min-width: 700px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        overflow-y: auto;
+    }
+
+    .graph {
+        height: 45vh;
+        padding: 10px;
+        margin-top: 5px;
+    }
+
+    .meals {
+        margin-top: 20px;
+        padding: 10px;
+    }
 }

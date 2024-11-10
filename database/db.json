@@ -390,7 +390,29 @@
     {
       "idUser": "_i8liyt",
       "date": "2024-11-10",
-      "breakfast": [],
+      "breakfast": [
+        {
+          "id": 0,
+          "name": "",
+          "caloriesPerGram": 0,
+          "carbohydrates": 0,
+          "proteins": 0,
+          "fats": 0,
+          "gramQuantity": 333,
+          "foodType": ""
+        },
+        {
+          "id": "1",
+          "name": "Popcorn",
+          "caloriesPerGram": 3.87,
+          "carbohydrates": 78,
+          "proteins": 12,
+          "fats": 4.5,
+          "gramQuantity": 333,
+          "foodType": "snacks",
+          "foodDesc": "A typical snacks item with moderate nutritional value."
+        }
+      ],
       "lunch": [],
       "snack": [],
       "dinner": [],

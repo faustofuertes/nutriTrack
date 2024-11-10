@@ -1,7 +1,9 @@
+/* Header y lista de navegación */
 .header {
     width: 100%;
     height: 80px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .header ul {
@@ -10,6 +12,9 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 .header li {
@@ -17,9 +22,8 @@
     justify-content: center;
     align-items: center;
     margin-left: 20px;
-    list-style-type: none;
     height: 100%;
-    transition: .1s;
+    transition: color 0.3s;
 }
 
 .header li:hover {
@@ -32,49 +36,45 @@
 }
 
 .header li:first-child {
-    display: flex;
-    align-self: flex-start;
-}
-
-.logo {
-    height: 110px;
-}
-
-
-.logo-item {
     margin-right: auto;
 }
 
+.logo {
+    height: 60px;
+}
+
+.logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 .btn-empezar {
-    padding: 10px;
+    padding: 10px 20px;
     color: white;
     background-color: #66BB6A;
     border: none;
     cursor: pointer;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 8px;
-    height: 55px;
-    width: 165px;
-    margin: 15px;
-    transition: background-color 0.5s, color 0.5s, transform 0.3s;
-    position: relative;
-    z-index: 2;
+    height: 45px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s;
 }
 
 .btn-empezar:hover {
     background-color: white;
-    border: 2px solid #66BB6A;
     color: #66BB6A;
+    border: 2px solid #66BB6A;
     transform: scale(1.05);
 }
 
 .header a {
-    margin-right: 15px;
-    cursor: pointer;
-    transition: .3s;
     text-decoration: none;
     color: black;
+    margin-right: 15px;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
 .header a:hover {
@@ -82,90 +82,82 @@
 }
 
 .btn-nutriTrack {
-    margin-left: 40px;
-    border: none;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2), 0px 2px 4px rgba(0, 0, 0, 0.1);
-    margin-right: 50px;
-    position: relative;
-    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
     font-weight: 500;
-    height: 52px;
-    border-radius: 10px;
     padding: 0 16px;
-    background-image: linear-gradient(155deg, #393540, #27232f);
-    transition: .5s;
+    height: 45px;
+    border-radius: 10px;
+    background: linear-gradient(155deg, #393540, #27232f);
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-nutriTrack:hover {
+    transform: scale(1.05);
 }
 
 .btn-nutriTrack span {
-    animation-name: shine;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: shine 2s infinite linear;
     background-image: linear-gradient(to right, #66BB6A 20%, white 40%, #66BB6A 60%, #66BB6A 80%);
-    color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
+    color: transparent;
     background-size: 200%;
-    background-position: 0%;
-}
-
-.fa-user-circle {
-    font-size: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 @keyframes shine {
     from {
         background-position: 0%;
     }
-
     to {
         background-position: 200%;
     }
 }
 
-/* Estilos para el menú desplegable de la cuenta */
+.logout {
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+}
+
+.logout:hover {
+    color: #66BB6A;
+}
+
+/* Menú desplegable de la cuenta */
 .account-menu {
     display: none;
-    /* Oculta el menú por defecto */
     position: absolute;
-    /* Asegúrate de que el menú esté posicionado correctamente */
+    top: 80px; /* Ajuste en relación al header */
+    right: 5%;
     background-color: white;
-    /* Fondo del menú */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    /* Sombra */
+    border-radius: 8px;
     z-index: 100;
-    /* Asegúrate de que esté por encima de otros elementos */
 }
 
 .account-menu ul {
-    padding: 0;
+    padding: 10px;
     margin: 0;
+    list-style: none;
 }
 
 .account-menu li {
-    list-style: none;
-    /* Sin viñetas */
     padding: 10px;
-    /* Espaciado interno */
 }
 
 .account-menu li a {
     color: black;
-    /* Color de texto */
     text-decoration: none;
-    /* Sin subrayado */
     display: block;
-    /* Asegúrate de que toda el área sea clickeable */
 }
 
 .account-menu li a:hover {
     background-color: #f0f0f0;
-    /* Color al pasar el mouse */
-}
-
-.logout{
-    font-size: 24px;
+    color: #66BB6A;
 }
