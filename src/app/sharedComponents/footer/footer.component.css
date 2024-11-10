@@ -18,11 +18,12 @@
   color: #ecf0f1;
   padding: 20px 0;
   text-align: center;
-  position: relative;
+  position: absolute;
   z-index: 2;
   backdrop-filter: blur(10px); /* Efecto de desenfoque */
   width: 100%; /* Asegura que el footer ocupe todo el ancho */
   bottom: 0; /* Lo coloca en la parte inferior */
+  
 }
 
 .footer-content {
