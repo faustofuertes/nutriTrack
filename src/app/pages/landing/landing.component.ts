@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavBarComponent } from '../../sharedComponents/nav-bar/nav-bar.component';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/user.service';
@@ -7,7 +6,7 @@ import { User } from '../../interfaces/user';
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [NavBarComponent, RouterLink,CommonModule],
+  imports: [RouterLink,CommonModule],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })

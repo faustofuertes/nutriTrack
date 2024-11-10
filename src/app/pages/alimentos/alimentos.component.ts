@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavBarComponent } from "../../sharedComponents/nav-bar/nav-bar.component";
 import { BarraBuscadoraComidasComponent } from "../../components/barra-buscadora-comidas/barra-buscadora-comidas.component";
 import { FoodContainerComponent } from "../../components/food-container/food-container.component";
 import { Food } from '../../interfaces/food';
@@ -10,7 +9,7 @@ import { FoodTypeComponent } from "../../components/food/food-type/food-type.com
 @Component({
   selector: 'app-alimentos',
   standalone: true,
-  imports: [NavBarComponent, BarraBuscadoraComidasComponent, FoodContainerComponent, FoodDetailComponent, FoodTypeComponent],
+  imports: [BarraBuscadoraComidasComponent, FoodContainerComponent, FoodDetailComponent, FoodTypeComponent],
   templateUrl: './alimentos.component.html',
   styleUrl: './alimentos.component.css'
 })

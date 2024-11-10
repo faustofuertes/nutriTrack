@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavBarComponent } from "../../sharedComponents/nav-bar/nav-bar.component";
 import { MealListComponent } from "../../components/meals/meal-list/meal-list.component";
 import { BarraBuscadoraComidasComponent } from '../../components/barra-buscadora-comidas/barra-buscadora-comidas.component';
 import { FoodContainerComponent } from '../../components/food-container/food-container.component';
@@ -14,7 +13,7 @@ import { MealStatisticsComponent } from "../../components/meals/meal-statistics/
 @Component({
   selector: 'app-my-nutri-track',
   standalone: true,
-  imports: [NavBarComponent, MealListComponent, BarraBuscadoraComidasComponent, FoodContainerComponent, FormsModule, DatePickerComponent, MealStatisticsComponent],
+  imports: [MealListComponent, BarraBuscadoraComidasComponent, FoodContainerComponent, FormsModule, DatePickerComponent, MealStatisticsComponent],
   templateUrl: './my-nutri-track.component.html',
   styleUrl: './my-nutri-track.component.css'
 })

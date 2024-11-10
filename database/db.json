@@ -23,6 +23,18 @@
       "gender": "masculino",
       "caloriesNeeded": 2420,
       "id": "_i8liyt"
+    },
+    {
+      "id": "1cfa",
+      "name": "Ivan",
+      "surname": "Badoza",
+      "email": "ivanbadoza@gmail.com",
+      "password": "123456pass",
+      "height": 178,
+      "weight": 98,
+      "gender": "masculino",
+      "age": 29,
+      "caloriesNeeded": 2684.6875
     }
   ],
   "meals": [
