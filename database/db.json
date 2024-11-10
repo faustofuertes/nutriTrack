@@ -422,7 +422,7 @@
           "carbohydrates": 1.1,
           "proteins": 13,
           "fats": 11,
-          "gramQuantity": 47,
+          "gramQuantity": 333,
           "foodType": "proteins",
           "foodDesc": "A typical proteins item with moderate nutritional value."
         }
@@ -462,18 +462,7 @@
           "carbohydrates": 1.1,
           "proteins": 13,
           "fats": 11,
-          "gramQuantity": 22,
-          "foodType": "proteins",
-          "foodDesc": "A typical proteins item with moderate nutritional value."
-        },
-        {
-          "id": "2",
-          "name": "Egg",
-          "caloriesPerGram": 1.55,
-          "carbohydrates": 1.1,
-          "proteins": 13,
-          "fats": 11,
-          "gramQuantity": 300,
+          "gramQuantity": 6,
           "foodType": "proteins",
           "foodDesc": "A typical proteins item with moderate nutritional value."
         }
