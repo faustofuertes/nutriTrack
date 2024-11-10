@@ -17,7 +17,6 @@ Para comenzar, clona el repositorio a tu máquina local usando:
 ```sh
 $ git clone https://github.com/faustofuertes/nutriTrack.git
 ```
-Luego, accede a la carpeta del proyecto:
 
 
 Luego, accede a la carpeta del proyecto:
