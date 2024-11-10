@@ -1,29 +1,27 @@
 <div class="container" *ngIf="user">
-    <!-- Perfil del usuario -->
+    <!-- User Profile -->
     <div class="meals">
         <div class="user-profile">
-            <h2>Perfil de {{ user.name }} {{ user.surname }}</h2>
+            <h2>{{ user.name }} {{ user.surname }}'s Profile</h2>
             <p>Email: {{ user.email }}</p>
-            <p>Edad: {{ user.age }}</p>
-            <p>Peso: {{ user.weight }} kg</p>
-            <p>Altura: {{ user.height }} cm</p>
-            <p>Género: {{ user.gender }}</p>
+            <p>Age: {{ user.age }}</p>
+            <p>Weight: {{ user.weight }} kg</p>
+            <p>Height: {{ user.height }} cm</p>
+            <p>Gender: {{ user.gender }}</p>
 
-            <button class="btn-edit">
-                <a [routerLink]="['/edit', user.id]">Modificar</a>
-            </button>
+            <button [routerLink]="['/edit', user.id]" class="btn-edit">Edit</button>
         </div>
     </div>
 
-    <!-- Datos Nutricionales -->
+    <!-- Nutritional Data -->
     <div class="graph">
         <div class="nutrition-data">
-            <h3>Datos Nutricionales</h3>
-            <p><strong>TMB:</strong> {{ user.caloriesNeeded }} kcal</p>
+            <h3>Nutritional Data</h3>
+            <p><strong>BMR:</strong> {{ user.caloriesNeeded }} kcal</p>
         </div>
     </div>
 </div>
 
 <div *ngIf="!user" class="no-profile-message">
-    <p>No se pudo cargar el perfil del usuario.</p>
+    <p>Failed to load user profile.</p>
 </div>

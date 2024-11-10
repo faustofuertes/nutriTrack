@@ -15,7 +15,9 @@ body {
 
 h1 {
     text-align: center;
-    color: #2d8659;
+    color: #66BB6A;
+    margin-top: 80px;
+    margin-bottom: 40px;
 }
 
 .faq-section {
@@ -28,13 +30,13 @@ h1 {
 }
 
 .faq-section:hover {
-    border-color: #2d8659;
+    border-color: #66BB6A;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .faq-section h2 {
     font-size: 1.2em;
-    color: #2d8659;
+    color: #66BB6A;
     margin: 0;
 }
 
