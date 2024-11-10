@@ -13,10 +13,6 @@ export class FoodApiService {
   constructor(private _httpService: HttpClient) { }
 
 
-  // getFoods(foodName: string): Observable<Food[]> {
-  //   const url = `${this.baseUrl}?name_like=${encodeURIComponent(foodName)}`;
-  //   return this._httpService.get<Food[]>(url);
-  // }
 
   getFoods(foodName: string): Observable<Food[]> {
     return this._httpService.get<Food[]>(this.baseUrl).pipe(
@@ -25,7 +21,9 @@ export class FoodApiService {
   }
 
   getFoodsByType(foodType: string): Observable<Food[]> {
-    const url = `${this.baseUrl}?foodType_like=${encodeURIComponent(foodType)}`;
-    return this._httpService.get<Food[]>(url);
+    return this._httpService.get<Food[]>(this.baseUrl).pipe(
+      map(foods => foods.filter(food => food.foodType.toLowerCase().includes(foodType.toLowerCase())))  // Filtra los alimentos por el tipo
+    );
   }
+  
 }
