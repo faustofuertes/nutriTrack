@@ -10,14 +10,18 @@ import { UserEditComponent } from './components/user/user-edit/user-edit.compone
 import { FaqComponent } from './pages/faq/faq.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { AccessDeniedComponent } from './access-denied/access-denied.component';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
     { path: 'alimentos', component: AlimentosComponent },
     { path: 'inicio', component: LandingComponent },
     { path: 'recetas', component: RecetasComponent },
     { path: 'register', component: RegisterFormComponent },
-    { path: 'userProfile', component: UserProfilePageComponent },
-    { path: 'my-Nutri-Track', component: MyNutriTrackComponent },
+    { path: 'userProfile',
+         component: UserProfilePageComponent ,
+        canActivate:[authGuard] },
+    { path: 'my-Nutri-Track', component: MyNutriTrackComponent,canActivate:[authGuard] },
     { path: 'faq', component: FaqComponent},
     { path:'about',component: AboutComponent},
     { path:'contact',component: ContactComponent},
@@ -26,7 +30,9 @@ export const routes: Routes = [
         component: LoginComponent, // Ruta pública para el login
     },
     {
-         path: 'edit/:id', component: UserEditComponent 
+         path: 'edit/:id', component: UserEditComponent ,canActivate:[authGuard]
     },
-    { path: '', component: LandingComponent }
+    {path: 'access-Denied', component:AccessDeniedComponent},
+    { path: '', component: LandingComponent },
+    {path: '**', redirectTo:''}
 ];
