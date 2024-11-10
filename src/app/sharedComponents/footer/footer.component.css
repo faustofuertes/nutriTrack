@@ -1,16 +1,6 @@
 /* Asegura que el contenedor principal cubra toda la altura disponible */
 
 
-.wrapper {
-  min-height: 100%; /* Hace que el contenedor principal ocupe toda la altura de la ventana */
-  display: flex;
-  flex-direction: column;
-}
-
-/* El contenido principal va a ocupar el espacio disponible */
-.main-content {
-  flex: 1; /* Hace que el contenido ocupe el máximo espacio posible */
-}
 
 /* El footer se mantiene al final de la página */
 .footer {
@@ -18,7 +8,6 @@
   color: #ecf0f1;
   padding: 20px 0;
   text-align: center;
-  position: absolute;
   z-index: 2;
   backdrop-filter: blur(10px); /* Efecto de desenfoque */
   width: 100%; /* Asegura que el footer ocupe todo el ancho */
