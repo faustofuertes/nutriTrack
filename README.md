@@ -14,28 +14,34 @@ Este es el proyecto final para la Universidad Tecnológica Nacional (UTN), desar
 
 ### Clonar el Repositorio
 Para comenzar, clona el repositorio a tu máquina local usando:
-
+```sh
 $ git clone https://github.com/faustofuertes/nutriTrack.git
-
+```
 Luego, accede a la carpeta del proyecto:
 
+
+Luego, accede a la carpeta del proyecto:
+```sh
 $ cd nutriTrack
+```
 
 ### Instalar Dependencias
 Una vez dentro del proyecto, instala las dependencias necesarias:
 
+```sh
 $ npm install
+```
 
 ### Correr los Endpoints
 Para correr los endpoints, debes iniciar el servidor `json-server`. Asegúrate de que estés en el directorio raíz del proyecto y ejecuta el siguiente comando:
-
+```sh
 $ json-server --watch db.json
-
+```
 ### Levantar la Aplicación
 Finalmente, para levantar la aplicación Angular, ejecuta:
-
+```sh
 $ ng serve -o
-
+```
 Esto abrirá la aplicación en tu navegador predeterminado.
 
 ## Contribución
