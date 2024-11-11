@@ -1,41 +1,41 @@
 <div class="recetas-container">
-<h2>Buscar Recetas</h2>
+<h2>Search Recipes</h2>
 
-<!-- Formulario para seleccionar tipo de búsqueda y término -->
+<!-- Form to select search type and term -->
 <form (ngSubmit)="buscarRecetas()">
     <div class="form-group">
-    <label for="searchMethod">Selecciona el tipo de búsqueda:</label>
+    <label for="searchMethod">Select search type:</label>
     <select id="searchMethod" [(ngModel)]="searchMethod" name="searchMethod" class="form-control">
-        <option value="nombre">Por Nombre</option>
-        <option value="categoria">Por Categoría</option>
-        <option value="ingrediente">Por Ingrediente</option>
+        <option value="nombre">By Name</option>
+        <option value="categoria">By Category</option>
+        <option value="ingrediente">By Ingredient</option>
     </select>
     </div>
 
     <div class="form-group">
-    <label for="searchTerm">Término de búsqueda:</label>
-    <input type="text" id="searchTerm" [(ngModel)]="searchTerm" name="searchTerm" class="form-control" placeholder="Ingresa el término..." required>
+    <label for="searchTerm">Search term:</label>
+    <input type="text" id="searchTerm" [(ngModel)]="searchTerm" name="searchTerm" class="form-control" placeholder="Enter the term..." required>
     </div>
 
-    <button type="submit" class="btn btn-primary">Buscar</button>
+    <button type="submit" class="btn btn-primary">Search</button>
 </form>
 
-<!-- Resultados de la búsqueda -->
+<!-- Search results -->
 <div *ngIf="recetas.length > 0" class="recetas-list">
-    <h3>Resultados:</h3>
+    <h3>Results:</h3>
     <div *ngFor="let receta of recetas; let i = index" [ngClass]="{'receta-container-odd': i % 2 === 0, 'receta-container-even': i % 2 !== 0}">
     <h4>{{ receta.strMeal }}</h4>
     <img [src]="receta.strMealThumb" alt="{{ receta.strMeal }}" class="receta-image">
     
-    <!-- Mostrar categoría solo si la búsqueda es por nombre -->
-    <p *ngIf="searchMethod === 'nombre'"><strong>Categoría:</strong> {{ receta.strCategory }}</p>
+    <!-- Show category only if search is by name -->
+    <p *ngIf="searchMethod === 'nombre'"><strong>Category:</strong> {{ receta.strCategory }}</p>
     
-    <!-- Mostrar área solo si la búsqueda es por nombre -->
-    <p *ngIf="searchMethod === 'nombre'"><strong>Área:</strong> {{ receta.strArea }}</p>
+    <!-- Show area only if search is by name -->
+    <p *ngIf="searchMethod === 'nombre'"><strong>Area:</strong> {{ receta.strArea }}</p>
 
-    <!-- Ingredientes -->
+    <!-- Ingredients -->
     <div *ngIf="receta.strIngredient1 && searchMethod === 'nombre'">
-        <h5>Ingredientes:</h5>
+        <h5>Ingredients:</h5>
         <ul>
         <li *ngFor="let i of getIngredients(receta)">
             {{ i.ingredient }} - {{ i.measure }}
@@ -43,16 +43,16 @@
         </ul>
     </div>
 
-    <!-- Instrucciones -->
+    <!-- Instructions -->
     <div *ngIf="receta.strInstructions && searchMethod === 'nombre'">
-        <h5>Instrucciones:</h5>
+        <h5>Instructions:</h5>
         <p>{{ receta.strInstructions }}</p>
     </div>
     </div>
 </div>
 
-<!-- Mensaje cuando no hay resultados -->
+<!-- Message when no results -->
 <div *ngIf="recetas.length === 0 && searchTerm">
-    <p>No se encontraron recetas para "{{ searchTerm }}"</p>
+    <p>No recipes found for "{{ searchTerm }}"</p>
 </div>
 </div>

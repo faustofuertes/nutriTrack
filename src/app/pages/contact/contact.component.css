@@ -106,6 +106,14 @@ textarea {
     outline: none;
 }
 
+.error-text {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    margin-left: 5px;
+  }
+  
+
 @media (max-width: 768px) {
     .section {
         padding: 20px;
