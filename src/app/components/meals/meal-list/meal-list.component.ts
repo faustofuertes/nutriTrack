@@ -85,37 +85,32 @@ export class MealListComponent implements OnInit, OnChanges {
       console.log('NO MANDO NADA');
     }
   }
+
+
+
+
+
+
   updateFoodFromMeal(food: Food) {
-    // Validación para asegurarse de que food es válido
-    if (!food || !food.id) {
-      alert("Please select a valid food.");
-      return; // Evita la actualización si no es válida
+    // Verificar que la cantidad de comida no sea menor que 0
+    if (food.gramQuantity < 0) {
+      alert("Please enter a valid quantity. The quantity cannot be less than 0.");
+      return; // Evita que se haga la actualización si la cantidad es inválida
     }
   
-    // Validación para asegurarse de que la cantidad es mayor que 0 y es un número válido
-    if (food.gramQuantity >= 0 ) {
-   
-    
-  
-    // Proceder con la actualización si las validaciones son correctas
-    this._myMealsService.updateFoodFromMeal(this.meal?.id, food, this.mealTypeRecived)
-      .toPromise()
-      .then(() => {
-        console.log("Food updated successfully");  // Verifica que el código entre en este bloque
-        // Recargar la página una vez que la actualización se complete
-        window.location.reload();
-      })
-      .catch((error) => {
-        console.error('Error updating the food:', error);
-      });
+    if (this.mealTypeRecived) {
+      this._myMealsService.updateFoodFromMeal(this.meal?.id, food, this.mealTypeRecived)
+        .toPromise()
+        .then(() => {
+          // Recargar la página una vez que la actualización se complete
+          window.location.reload();
+        })
+        .catch((error) => {
+          console.error('Error updating the food:', error);
+        });
+    } else {
+      console.log("Meal type not provided");
     }
-    else
-
-    {
-      alert("Please enter a valid quantity greater than 0.");
-
-    }
-    window.location.reload()
   }
 
   
