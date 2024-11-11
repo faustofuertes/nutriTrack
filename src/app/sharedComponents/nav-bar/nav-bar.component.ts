@@ -59,4 +59,13 @@ export class NavBarComponent {
     console.log('Account menu visible:', this.accountMenuVisible); // Para depuración
   }
 
+  navigateToRecipes(){
+    this.router.navigate(['recetas']);
+  }
+
+  navigateToFoods(){
+    this.router.navigate(['alimentos']);
+  }
+
+
 }

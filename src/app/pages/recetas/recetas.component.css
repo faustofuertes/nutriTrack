@@ -1,0 +1,27 @@
+.recetas-container {
+max-width: 600px;
+margin: auto;
+padding: 20px;
+}
+
+.form-group {
+margin-bottom: 15px;
+}
+
+.recetas-list ul {
+list-style-type: none;
+padding: 0;
+}
+
+.recetas-list li {
+margin-bottom: 20px;
+}
+
+.recetas-list img {
+margin-top: 10px;
+border-radius: 8px;
+}
+
+.btn {
+width: 100%;
+}

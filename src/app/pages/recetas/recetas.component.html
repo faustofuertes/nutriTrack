@@ -1,0 +1,40 @@
+<div class="recetas-container">
+<h2>Buscar Recetas</h2>
+
+<!-- Formulario para seleccionar tipo de búsqueda y término -->
+<form (ngSubmit)="buscarRecetas()">
+    <div class="form-group">
+    <label for="searchMethod">Selecciona el tipo de búsqueda:</label>
+    <select id="searchMethod" [(ngModel)]="searchMethod" name="searchMethod" class="form-control">
+        <option value="nombre">Por Nombre</option>
+        <option value="categoria">Por Categoría</option>
+        <option value="ingrediente">Por Ingrediente</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+    <label for="searchTerm">Término de búsqueda:</label>
+    <input type="text" id="searchTerm" [(ngModel)]="searchTerm" name="searchTerm" class="form-control" placeholder="Ingresa el término..." required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+<!-- Resultados de la búsqueda -->
+<div *ngIf="recetas.length > 0" class="recetas-list">
+    <h3>Resultados:</h3>
+    <ul>
+    <li *ngFor="let receta of recetas">
+        <h4>{{ receta.strMeal }}</h4>
+        <img [src]="receta.strMealThumb" alt="{{ receta.strMeal }}" width="150">
+        <p>{{ receta.strCategory }} - {{ receta.strArea }}</p>
+    </li>
+    </ul>
+</div>
+
+<!-- Mensaje cuando no hay resultados -->
+<div *ngIf="recetas.length === 0 && searchTerm">
+    <p>No se encontraron recetas para "{{ searchTerm }}"</p>
+</div>
+</div>
+  
