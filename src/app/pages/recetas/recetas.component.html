@@ -23,13 +23,32 @@
 <!-- Resultados de la búsqueda -->
 <div *ngIf="recetas.length > 0" class="recetas-list">
     <h3>Resultados:</h3>
-    <ul>
-    <li *ngFor="let receta of recetas">
-        <h4>{{ receta.strMeal }}</h4>
-        <img [src]="receta.strMealThumb" alt="{{ receta.strMeal }}" width="150">
-        <p>{{ receta.strCategory }} - {{ receta.strArea }}</p>
-    </li>
-    </ul>
+    <div *ngFor="let receta of recetas; let i = index" [ngClass]="{'receta-container-odd': i % 2 === 0, 'receta-container-even': i % 2 !== 0}">
+    <h4>{{ receta.strMeal }}</h4>
+    <img [src]="receta.strMealThumb" alt="{{ receta.strMeal }}" class="receta-image">
+    
+    <!-- Mostrar categoría solo si la búsqueda es por nombre -->
+    <p *ngIf="searchMethod === 'nombre'"><strong>Categoría:</strong> {{ receta.strCategory }}</p>
+    
+    <!-- Mostrar área solo si la búsqueda es por nombre -->
+    <p *ngIf="searchMethod === 'nombre'"><strong>Área:</strong> {{ receta.strArea }}</p>
+
+    <!-- Ingredientes -->
+    <div *ngIf="receta.strIngredient1 && searchMethod === 'nombre'">
+        <h5>Ingredientes:</h5>
+        <ul>
+        <li *ngFor="let i of getIngredients(receta)">
+            {{ i.ingredient }} - {{ i.measure }}
+        </li>
+        </ul>
+    </div>
+
+    <!-- Instrucciones -->
+    <div *ngIf="receta.strInstructions && searchMethod === 'nombre'">
+        <h5>Instrucciones:</h5>
+        <p>{{ receta.strInstructions }}</p>
+    </div>
+    </div>
 </div>
 
 <!-- Mensaje cuando no hay resultados -->
@@ -37,4 +56,3 @@
     <p>No se encontraron recetas para "{{ searchTerm }}"</p>
 </div>
 </div>
-  

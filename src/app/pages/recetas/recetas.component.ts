@@ -32,4 +32,17 @@ export class RecetasComponent {
       });
     }
   }
+
+  getIngredients(receta: any) {
+    const ingredients = [];
+    for (let i = 1; i <= 20; i++) {
+      const ingredient = receta[`strIngredient${i}`];
+      const measure = receta[`strMeasure${i}`];
+      if (ingredient && ingredient.trim()) {
+        ingredients.push({ ingredient, measure });
+      }
+    }
+    return ingredients;
+  }
+  
 }
