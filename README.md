@@ -31,11 +31,27 @@ Una vez dentro del proyecto, instala las dependencias necesarias:
 $ npm install
 ```
 
+
 ### Correr los Endpoints
-Para correr los endpoints, debes iniciar el servidor `json-server`. Asegúrate de que estés en el directorio raíz del proyecto y ejecuta el siguiente comando:
-```sh
-$ json-server --watch db.json
-```
+
+Para correr los endpoints, debes iniciar dos instancias del servidor `json-server`, una para el servicio de las comidas y usuarios, y otra para el servicio de los mensajes. Asegúrate de que estés en el directorio raíz del proyecto y ejecuta los siguientes comandos en dos terminales diferentes:
+
+1. Para el servicio de comidas y usuarios, donde se usa el archivo `db.json`:
+
+   ```sh
+   $ json-server --watch db.json --port 3000
+   ```
+
+2. Para el servicio de mensajes, donde se usa el archivo `dbMensajes.json`:
+
+   ```sh
+   $ json-server --watch dbMensajes.json --port 3001
+   ```
+
+De esta manera, tendrás ambos servicios corriendo en puertos diferentes, uno para las comidas/usuarios en el puerto 3000 y otro para los mensajes en el puerto 3001.
+
+
+
 ### Levantar la Aplicación
 Finalmente, para levantar la aplicación Angular, ejecuta:
 ```sh
