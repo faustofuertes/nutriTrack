@@ -1,11 +1,11 @@
 # NutriTrack - Aplicación Nutricional
 
-Este es el proyecto final para la Universidad Tecnológica Nacional (UTN), desarrollado por Federico Sosa, Fausto Fuertes, Iván Badoza, Santiago Camarda e Ignacio Volpe. El proyecto es una aplicación nutricional que permite a los usuarios gestionar sus comidas diarias y tener un mayor control sobre la ingesta de macronutrientes.
+Este es el proyecto final para la Universidad Tecnológica Nacional (UTN), desarrollado por Fausto Fuertes, Federico Sosa, Iván Badoza, Santiago Camarda e Ignacio Volpe. El proyecto es una aplicación nutricional que permite a los usuarios gestionar sus comidas diarias y tener un mayor control sobre la ingesta de macronutrientes.
 
 ## Desarrolladores
 
+- Fausto Fuertes [LinkedIn](https://www.linkedin.com/in/fausto-fuertes-667986254/)
 - Federico Sosa - [LinkedIn](https://www.linkedin.com/in/federico-sosa-533512239/)
-- Fausto Fuertes
 - Iván Badoza - [LinkedIn](https://www.linkedin.com/in/ivan-badoza-5995bb337/)
 - Santiago Camarda
 - Ignacio Volpe
